@@ -10,4 +10,8 @@ module PuzzleUtils
   def self.read_lines(file)
     read_input(file).lines.map(&:strip)
   end
+
+  def self.read_ints(file)
+    read_lines(file).map(&:to_i)
+  end
 end
