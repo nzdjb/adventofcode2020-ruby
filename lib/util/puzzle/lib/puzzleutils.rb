@@ -6,4 +6,8 @@ module PuzzleUtils
     path = caller_locations.reject { |location| location.path == __FILE__ }.first.path
     File.open(File.join(File.dirname(path), '..', 'inputs', file)).read
   end
+
+  def self.read_lines(file)
+    read_input(file).lines.map(&:strip)
+  end
 end
