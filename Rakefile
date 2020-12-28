@@ -37,5 +37,6 @@ task :gen, [:day, :year] do |_task, args|
 
   cp_r(File.join(template_path, '.'), day_path, verbose: true)
 
-  # TODO: Rename test class.
+  replacement = File.open(File.join(template_path, 'test', 'tc_main.rb')).read.gsub(/YEARDAY/, "#{year}#{day}")
+  File.open(File.join(day_path, 'test', 'tc_main.rb'), 'w').write(replacement)
 end

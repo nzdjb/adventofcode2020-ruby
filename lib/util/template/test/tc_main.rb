@@ -4,7 +4,7 @@ require 'test/unit'
 require_relative '../lib/main'
 
 # Tests for the main class.
-class TestMain < Test::Unit::TestCase
+class TestMainYEARDAY < Test::Unit::TestCase
   test 'part1 trial' do
     assert_equal('input_trial.txt', part1('input_trial.txt'))
   end
