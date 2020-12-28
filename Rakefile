@@ -37,6 +37,13 @@ task :gen, [:day, :year] do |_task, args|
 
   cp_r(File.join(template_path, '.'), day_path, verbose: true)
 
-  replacement = File.open(File.join(template_path, 'test', 'tc_main.rb')).read.gsub(/YEARDAY/, "#{year}#{day}")
-  File.open(File.join(day_path, 'test', 'tc_main.rb'), 'w').write(replacement)
+  code_path = File.join('lib', 'main.rb')
+  gen_replace(File.join(template_path, code_path), File.join(day_path, code_path), /YEARDAY/, "#{year}#{day}")
+  test_path = File.join('test', 'tc_main.rb')
+  gen_replace(File.join(template_path, test_path), File.join(day_path, test_path), /YEARDAY/, "#{year}#{day}")
+end
+
+def gen_replace(src, dst, pattern, replacement)
+  new_contents = File.open(src).read.gsub(pattern, replacement)
+  File.open(dst, 'w').write(new_contents)
 end
