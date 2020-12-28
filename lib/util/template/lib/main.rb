@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # Class for solving puzzle YEARDAY
-class YEARDAY
+class MainYEARDAY
   def self.part1(input)
     input
   end
