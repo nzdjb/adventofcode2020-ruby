@@ -26,7 +26,8 @@ task :gen, [:day, :year] do |_task, args|
 
   base_path = Dir.new(File.dirname(__FILE__))
   year = args[:year] || '2020'
-  day_path = File.join(base_path, 'lib', year, "day#{args[:day]}")
+  day = args[:day]
+  day_path = File.join(base_path, 'lib', year, "day#{day}")
 
   raise 'Day already created.' if Dir.exist? day_path
 
