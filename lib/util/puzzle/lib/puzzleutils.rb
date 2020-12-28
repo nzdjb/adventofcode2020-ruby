@@ -3,7 +3,7 @@
 # Helper functions for solving puzzles.
 module PuzzleUtils
   def self.read_input(file)
-    dir = File.dirname(caller.first.partition(':').first)
-    File.open(File.join(dir, '..', 'inputs', file)).read
+    path = caller_locations.reject { |location| location.path == __FILE__ }.first.path
+    File.open(File.join(File.dirname(path), '..', 'inputs', file)).read
   end
 end
