@@ -5,11 +5,11 @@ require_relative '../lib/main'
 
 # Tests for the main class.
 class TestMainYEARDAY < Test::Unit::TestCase
-  test 'part1 trial' do
-    assert_equal('input_trial.txt', MainYEARDAY.part1('input_trial.txt'))
+  test 'part1 sample' do
+    assert_equal('input_sample.txt', MainYEARDAY.part1('input_sample.txt'))
   end
-  test 'part2 trial' do
-    assert_equal('input_trial.txt', MainYEARDAY.part2('input_trial.txt'))
+  test 'part2 sample' do
+    assert_equal('input_sample.txt', MainYEARDAY.part2('input_sample.txt'))
   end
   test 'part1 real' do
     assert_equal('input.txt', MainYEARDAY.part1('input.txt'))
