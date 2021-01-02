@@ -14,4 +14,8 @@ module PuzzleUtils
   def self.read_ints(file)
     read_lines(file).map(&:to_i)
   end
+
+  def self.read_groups(file)
+    read_input(file).split(/\r?\n\r?\n/)
+  end
 end
