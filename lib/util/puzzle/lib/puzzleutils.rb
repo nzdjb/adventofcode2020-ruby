@@ -1,5 +1,12 @@
 # frozen_string_literal: true
 
+# Extend symbol so we can do elegant mapping with arguments
+class Symbol
+  def with(*args, &block)
+    ->(func, *rest) { func.send(self, *rest, *args, &block) }
+  end
+end
+
 # Helper functions for solving puzzles.
 module PuzzleUtils
   def self.read_input(file)
